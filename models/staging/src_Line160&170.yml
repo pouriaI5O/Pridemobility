@@ -1,0 +1,47 @@
+version: 2
+
+sources: 
+  - name: public
+    description: A Redshift database
+    database: deeplens
+    tables:
+      - name: pridemobility_tracking_170_new
+        description: Line170 data
+        loaded_at_field: timestamps
+        freshness: 
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 48, period: hour}
+        columns:
+          - name: idline170wip
+            description: chair at wip line.  
+            tests:
+              - unique
+          - name: idline170wt
+            description: chair at waiting line.  
+            tests:
+              - unique  
+          - name: timestamps
+            description: Time of detection chair in waiting line. 
+            tests:
+              - not_null
+              - unique
+      - name: pridemobility_tracking_160_new
+        description: Line160 data
+        loaded_at_field: timestamps
+        freshness:
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 48, period: hour}
+        columns: 
+          - name: idline160wip
+            description: chair at wip line.  
+            tests:
+              - unique
+          - name: idline160wt
+            description: chair at waiting line.  
+            tests:
+              - unique   
+          - name: timestamps
+            description: Time of detection chair in waiting line  . 
+            tests:
+              - not_null
+              - unique

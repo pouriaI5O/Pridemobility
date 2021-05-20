@@ -1,0 +1,1 @@
+select*  FROM {{ source('public','pridemobility_tracking_160_new') }}
