@@ -20,6 +20,6 @@ WITH cte AS(
           DATE(timestamp) as Date,
           idline170wip as Id_Wip
           ,idline170wt as Id_Wt           
-          from  public.pridemobility_tracking_170_new) 
+          FROM {{ source('public','pridemobility_tracking_170_new') }}) 
 )
 select *from cte where cnt=1  
