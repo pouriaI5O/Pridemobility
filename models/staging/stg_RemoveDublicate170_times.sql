@@ -21,6 +21,6 @@ WITH cte AS(
           personline170 as Count_Person,
           line170wip as Count_Wip,
           line170wt as Count_Wt           
-           from  public.pridemobility_tracking_170_new) 
+           FROM {{ source('public','pridemobility_tracking_170_new') }})  
 )
 select *from cte where cnt=1  
