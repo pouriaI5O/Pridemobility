@@ -7,4 +7,4 @@ Timestamps AT TIME ZONE 'UTC'  AS
      WHEN Time >'12:50:00' and Time <'13:05:00'THEN 0
      ELSE 1 END AS Break_Filter
 
- from {{ ref('int_L160_IdWt')}} where Break_Filter>0 and  Id_Wt IS NOT NULL
+ from {{ ref('int_l160_idwt')}} where Break_Filter>0 and  Id_Wt IS NOT NULL
