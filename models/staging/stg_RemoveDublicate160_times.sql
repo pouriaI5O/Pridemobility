@@ -1,6 +1,3 @@
-{{ config(
-    materialized='view'
-)}}
 WITH cte AS(
           select*,ROW_NUMBER() OVER(
              PARTITION BY
