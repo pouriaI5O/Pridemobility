@@ -17,7 +17,7 @@ from
        round(avg(count_person)) as Count_Person ,
        round(avg(count_wip))as Count_Wip,
        round(avg(count_wt))as Count_Wt
-       from {{ ref('stg_RemoveDublicate160_times')}}
+       from {{ ref('stg_removedublicate160_times')}}
        group by Date,Hour,Minute
        order by Date )
     where (Time >'06:00:00' and Time <'14:30:00')
