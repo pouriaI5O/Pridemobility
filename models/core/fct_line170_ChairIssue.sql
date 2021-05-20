@@ -1,6 +1,3 @@
-{{ config(
-    materialized='table'
-)}}
 with
 WP as (select chair_id ,Date as dt1,Hour as h1,sum(duration)as du1 from {{ ref('fct_Line170Wip_Total_ID')}}
 group by dt1,Hour,chair_id),
