@@ -1,7 +1,7 @@
 with
-WP as (select chair_id ,Date as dt1,Hour as h1,sum(duration)as du1 from {{ ref('fct_Line170Wip_Total_ID')}}
+WP as (select chair_id ,Date as dt1,Hour as h1,sum(duration)as du1 from {{ ref('fct_line170wip_total_id')}}
 group by dt1,Hour,chair_id),
-WT as (select chair_id ,Date as dt2,Hour as h2,sum(duration)as du2 from {{ ref('fct_Line170Wt_Total_ID')}} 
+WT as (select chair_id ,Date as dt2,Hour as h2,sum(duration)as du2 from {{ ref('fct_line170wt_total_id')}} 
 group by dt2,Hour,chair_id ),
 WPWT as(select 
         WP.chair_id,
