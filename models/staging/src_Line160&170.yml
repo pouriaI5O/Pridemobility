@@ -7,7 +7,7 @@ sources:
     tables:
       - name: pridemobility_tracking_170_new
         description: Line170 data
-        loaded_at_field: timestamps
+        loaded_at_field: timestamp
         freshness: 
           warn_after: {count: 12, period: hour}
           error_after: {count: 48, period: hour}
@@ -20,14 +20,14 @@ sources:
             description: chair at waiting line.  
             tests:
               - unique  
-          - name: timestamps
+          - name: timestamp
             description: Time of detection chair in waiting line. 
             tests:
               - not_null
               - unique
       - name: pridemobility_tracking_160_new
         description: Line160 data
-        loaded_at_field: timestamps
+        loaded_at_field: timestamp
         freshness:
           warn_after: {count: 12, period: hour}
           error_after: {count: 48, period: hour}
