@@ -6,4 +6,4 @@ select hour,minute,Date,Id_Wip as chair_id,Duration,
   ,cast(CONCAT(date, ' '+CAST(hour AS VARCHAR(2))+':'+CAST(minute AS VARCHAR(2))) as datetime)as Timestamps,
   Timestamps AT TIME ZONE 'UTC'  AS
        Utc_Timestamp   
- from {{ ref('int_L170_IdWip')}} where Break_Filter>0 and  chair_id IS NOT NULL
+ from {{ ref('int_l170_idwip')}} where Break_Filter>0 and  chair_id IS NOT NULL
