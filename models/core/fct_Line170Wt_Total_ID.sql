@@ -1,6 +1,3 @@
-{{ config(
-    materialized='table'
-)}}
 select hour,minute,Date,Id_Wt as chair_id,Duration,
 cast(CONCAT(date, ' '+CAST(hour AS VARCHAR(2))+':'+CAST(minute AS VARCHAR(2))) as datetime)as Timestamps,
 Timestamps AT TIME ZONE 'UTC'  AS
