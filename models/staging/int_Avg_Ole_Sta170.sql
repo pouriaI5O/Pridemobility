@@ -1,7 +1,3 @@
-{{ config(
-    materialized='view'
-)}}
-
 select hour,minute,date,count_person,count_wip,count_wt,
 cast(CONCAT(date, ' '+CAST(hour AS VARCHAR(2))+':'+CAST(minute AS VARCHAR(2))) as datetime)as Timestamps,
 cast(Timestamps AS time) as Time,
