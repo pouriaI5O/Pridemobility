@@ -1,6 +1,3 @@
-{{ config(
-    materialized='table'
-)}}
 select Timestamps,hour,minute,date,count_person,count_wip,count_wt,
 Status,Ole_Status,Utc_Timestamp,
  CASE WHEN Time>'08:10:00' and Time <'08:25:00'THEN 0
