@@ -1,6 +1,3 @@
-{{ config(
-    materialized='table'
-)}}
 select hour,minute,Date,Id_Wip as chair_id,Duration,
  CASE WHEN Time>'08:10:00' and Time <'08:25:00'THEN 0
      WHEN Time >'10:45:00' and Time <'11:25:00'THEN 0
