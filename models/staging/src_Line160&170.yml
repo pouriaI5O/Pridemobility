@@ -40,7 +40,7 @@ sources:
             description: chair at waiting line.  
             tests:
               - unique   
-          - name: timestamps
+          - name: timestamp
             description: Time of detection chair in waiting line  . 
             tests:
               - not_null
