@@ -6,4 +6,4 @@ from ( select Count(*) as Duration,Date,Hour,Minute,Id_Wip
 from {{ ref('stg_removedublicate_times_id160')}}
        group by Id_Wip,Date,Hour,Minute
        order by Date)
-       where (Time >'06:00:00' and Time <'14:30:00')
+       where (Time >'06:00:00' and Time <'14:30:00') --newfile
