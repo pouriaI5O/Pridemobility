@@ -18,6 +18,6 @@ WPWT as(select
         AND (WP.chair_id=WT.chair_id)
         )
  select dt2 as Date ,h2 as Hour,chair_id2 as ID,du2 as Duration,
- cast(CONCAT(dt2, ' '+CAST(h2 AS VARCHAR(2)) +':'+'00')as datetime)as Timestamps,Timestamps AT TIME ZONE 'UTC'  AS
-       Utc_Timestamp
+ cast(CONCAT(dt2, ' '+CAST(h2 AS VARCHAR(2)) +':'+'00')as datetime)as Local_Timestamp,
+ DATEADD(HOUR, +4, Local_Timestamp) as  Utc_Timestamp
   from  WPWT where Duration>300 

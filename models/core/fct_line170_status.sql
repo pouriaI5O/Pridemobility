@@ -1,5 +1,6 @@
-select Timestamps,hour,minute,date,count_person,count_wip,count_wt,
-Status,Ole_Status,Utc_Timestamp,
+select Timestamps as Local_Timestamp ,
+ DATEADD(HOUR, +4, Local_Timestamp) as  Utc_Timestamp,hour,minute,date,count_person,count_wip,count_wt,
+Status,Ole_Status,
  CASE WHEN Time>'08:10:00' and Time <'08:25:00'THEN 0
      WHEN Time >'10:45:00' and Time <'11:25:00'THEN 0
      WHEN Time >'12:50:00' and Time <'13:05:00'THEN 0
