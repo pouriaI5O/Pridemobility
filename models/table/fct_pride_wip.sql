@@ -6,7 +6,7 @@
 select *,
        convert_timezone('UTC','America/New_York',utc_timestamp) as local_timestamp 
 from {{ ref('int_stg_union_wip')}}
-order by date,hour
+--order by date,hour---
 {% if is_incremental() %}
 
   -- this filter will only be applied on an incremental run
