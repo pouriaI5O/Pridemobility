@@ -1,4 +1,4 @@
----Creating pride mobility status table---
+-----Creating pride mobility status table---
 
 {{
     config(
@@ -17,7 +17,7 @@ select convert_timezone('America/New_York','America/New_York',timestamps) as loc
        status,
        status_ole 
 FROM {{ ref('int_stg_union_status')}}
-order by date,hour
+---order by date,hour----
 {% if is_incremental() %}
 
   -- this filter will only be applied on an incremental run
